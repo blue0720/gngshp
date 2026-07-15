@@ -1,0 +1,21 @@
+{
+  "name": "gngshp",
+  "version": "0.0.1",
+  "private": true,
+  "description": "株式会社ジエンジサービス（gngs.co.jp）コーポレートサイト リニューアルプロジェクト（Next.js版）",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "next": "^16.2.10",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.10"
+  }
+}

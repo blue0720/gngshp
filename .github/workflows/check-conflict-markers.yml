@@ -1,0 +1,29 @@
+# マージコンフリクトマーカーの混入防止ワークフロー
+#
+# 過去に <<<<<<< / ======= / >>>>>>> といったGitのマージコンフリクトマーカーが
+# 解消されないまま本番ページに残っていた実績があるため、
+# push / pull_request のたびにリポジトリ全体を検査し、
+# マーカーが見つかった場合はCIを失敗させてマージをブロックする。
+name: Check merge conflict markers
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check-conflict-markers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Search for conflict markers
+        run: |
+          if grep -R -n -E '^(<{7}|={7}|>{7})( |$)' \
+            --exclude-dir=.git \
+            --exclude-dir=node_modules \
+            --exclude-dir=.next \
+            .; then
+            echo "::error::マージコンフリクトマーカーが検出されました。解消してから再度コミットしてください。"
+            exit 1
+          fi
