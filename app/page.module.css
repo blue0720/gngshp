@@ -1,0 +1,158 @@
+.hero {
+  padding: 120px 32px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-navy), var(--color-teal));
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.about {
+  position: relative;
+  padding: 80px 32px;
+  text-align: center;
+  background-color: var(--color-bg);
+}
+
+.mark {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 24px;
+  background-color: var(--color-red);
+  transform: rotate(45deg);
+}
+
+.caption {
+  color: var(--color-teal);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.about h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.news {
+  padding: 80px 32px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-teal-light), var(--color-teal));
+  clip-path: polygon(0 40px, 100% 0, 100% calc(100% - 40px), 0 100%);
+}
+
+.news .caption {
+  color: #fff;
+}
+
+.news h2 {
+  font-size: 2rem;
+  margin-bottom: 32px;
+}
+
+.newsList {
+  list-style: none;
+  max-width: 640px;
+  margin: 0 auto 32px;
+  text-align: left;
+}
+
+.newsList li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.newsList a {
+  display: flex;
+  gap: 24px;
+  padding: 12px 0;
+}
+
+.newsDate {
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+.moreButton {
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 999px;
+  background-color: #fff;
+  color: var(--color-teal);
+  font-weight: 700;
+}
+
+.service {
+  padding: 80px 32px;
+  text-align: center;
+  background-color: var(--color-bg);
+}
+
+.service h2 {
+  font-size: 1.75rem;
+  margin-bottom: 40px;
+  color: var(--color-navy);
+}
+
+.serviceCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.serviceCard {
+  flex: 1 1 260px;
+  max-width: 300px;
+  padding: 32px 24px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--color-navy), var(--color-teal));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.moreButtonOutline {
+  padding: 8px 24px;
+  border-radius: 999px;
+  border: 1px solid #fff;
+  font-weight: 700;
+}
+
+.recruit {
+  padding: 80px 32px;
+  text-align: center;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.recruitBadge {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--color-teal);
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.4;
+}
+
+.recruit a {
+  color: var(--color-teal);
+  font-weight: 700;
+  text-decoration: underline;
+}

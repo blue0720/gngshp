@@ -1,0 +1,57 @@
+/*
+  CSS Modulesについて:
+  このファイル名は "Header.module.css" のように ".module.css" で終わっている。
+  こう名付けると、ここに書いたクラス名（.header など）は
+  このファイル専用の名前に自動変換され、他のファイルのCSSとぶつからなくなる。
+  使う側（Header.js）では `import styles from "./Header.module.css"` として読み込み、
+  `styles.header` のようにJSのオブジェクトとして参照する。
+*/
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 16px 32px;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+/* 現行サイトのロゴにある赤い菱形マークを、画像を使わずCSSだけで再現したもの */
+.logoMark {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-red);
+  transform: rotate(45deg);
+}
+
+.navList {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 32px;
+  list-style: none;
+  font-size: 0.95rem;
+}
+
+.contactButton {
+  padding: 10px 24px;
+  border-radius: 999px;
+  background-color: var(--color-teal);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}

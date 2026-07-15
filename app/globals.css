@@ -1,0 +1,45 @@
+/*
+  globals.css: サイト全体に適用する共通CSS（リセットCSSや基本フォントなど）。
+  ページ固有のスタイルはここではなく、各ページの *.module.css に書く。
+
+  ここに書いた --color-* のような変数は「CSSカスタムプロパティ」と呼ばれるもの。
+  現行サイト(gngs.co.jp)の配色を調べて設定した値で、色を変えたいときは
+  ここを直すだけで全ページに反映される（各CSSファイルに直接色コードを
+  書かないようにするための仕組み）。
+*/
+
+:root {
+  /* 現行サイトから採取した配色 */
+  --color-teal: #31b9b4; /* CONTACTボタンなどのメインカラー */
+  --color-teal-light: #5db8c4; /* 見出しの補助的なアクセント */
+  --color-navy: #192a31; /* フッターの背景色 */
+  --color-red: #e0332a; /* ロゴ・アクセントの赤（現行サイトは画像のため近似値） */
+  --color-text: #131313; /* 本文の文字色 */
+  --color-bg: #ffffff;
+
+  /*
+    現行サイトと同じフォント指定。--font-noto-sans-jp は layout.js で
+    next/font/google から読み込んだ「Noto Sans JP」を指す変数（無ければ
+    OS標準の日本語フォントに自動でフォールバックする）。
+  */
+  --font-sans: var(--font-noto-sans-jp), "Yu Gothic Medium", "游ゴシック Medium",
+    YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ,
+    Meiryo, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
