@@ -3,6 +3,7 @@
 // 「動的なページ」の見本。更新頻度が高いNewsだけ、こうしてデータ取得を分離してある。
 import Link from "next/link";
 import { getAllNews } from "@/lib/news";
+import PageHeader from "@/components/PageHeader";
 import styles from "./page.module.css";
 
 // サーバーコンポーネント（初期表示用のNext.js特有の仕組み）なので、
@@ -11,17 +12,21 @@ export default async function NewsPage() {
   const newsList = await getAllNews();
 
   return (
-    <section className={styles.section}>
-      <h1>News（お知らせ）</h1>
-      <ul>
-        {newsList.map((item) => (
-          <li key={item.slug}>
-            <Link href={`/news/${item.slug}`}>
-              {item.date}　{item.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <>
+      <PageHeader eyebrow="NEWS" title="お知らせ" />
+
+      <section className={styles.section}>
+        <ul className={styles.list}>
+          {newsList.map((item) => (
+            <li key={item.slug}>
+              <Link href={`/news/${item.slug}`} className={styles.item}>
+                <span className={styles.date}>{item.date}</span>
+                <span className={styles.title}>{item.title}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
   );
 }

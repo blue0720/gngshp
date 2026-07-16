@@ -1,8 +1,29 @@
 .article {
-  padding: 48px 24px;
+  padding: 96px 32px;
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .date {
-  color: #666;
-  font-size: 0.875rem;
+  color: #7a848a;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 32px;
+  color: var(--color-navy);
+}
+
+.body {
+  line-height: 1.9;
+  margin-bottom: 48px;
+}
+
+.back {
+  color: var(--color-teal);
+  font-weight: 700;
 }

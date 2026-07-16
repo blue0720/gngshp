@@ -1,3 +1,52 @@
 .section {
-  padding: 48px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 96px 32px;
+}
+
+.image {
+  margin-bottom: 48px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 16px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e6e8;
+  line-height: 1.7;
+}
+
+.table th {
+  width: 160px;
+  color: var(--color-navy);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.note {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: #7a848a;
+}
+
+@media (max-width: 600px) {
+  .table th,
+  .table td {
+    display: block;
+    width: auto;
+  }
+
+  .table th {
+    padding-bottom: 4px;
+    border-bottom: none;
+  }
+
+  .table td {
+    padding-top: 0;
+  }
 }

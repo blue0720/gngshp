@@ -4,6 +4,7 @@
 // 実際のURLの該当部分（例: /news/sample-news-1 の "sample-news-1"）が
 // params.slug としてこのファイルに渡ってくる。
 // なお、Next.jsのバージョンによりparamsはPromiseになっているため await が必要。
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getNewsBySlug } from "@/lib/news";
 import styles from "./page.module.css";
@@ -19,9 +20,14 @@ export default async function NewsDetailPage({ params }) {
 
   return (
     <article className={styles.article}>
-      <p className={styles.date}>{news.date}</p>
-      <h1>{news.title}</h1>
-      <p>{news.body}</p>
+      <div className={styles.inner}>
+        <p className={styles.date}>{news.date}</p>
+        <h1 className={styles.title}>{news.title}</h1>
+        <p className={styles.body}>{news.body}</p>
+        <Link href="/news" className={styles.back}>
+          ← お知らせ一覧に戻る
+        </Link>
+      </div>
     </article>
   );
 }
