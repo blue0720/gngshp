@@ -1,18 +1,70 @@
 .hero {
-  padding: 120px 32px;
-  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 140px 32px 100px;
   color: #fff;
   background: linear-gradient(135deg, var(--color-navy), var(--color-teal));
 }
 
-.hero h1 {
-  font-size: 2rem;
+/*
+  斜めストライプの装飾。repeating-linear-gradientでCSSだけで縞模様を作り、
+  ヒーローの右下に配置している（systena.co.jpのオレンジのストライプ演出を
+  画像を使わずに再現したもの）。
+*/
+.heroStripes {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60%;
+  height: 140%;
+  background: repeating-linear-gradient(
+    115deg,
+    var(--color-red) 0px,
+    var(--color-red) 18px,
+    transparent 18px,
+    transparent 36px
+  );
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  max-width: 720px;
+}
+
+.heroEyebrow {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
   margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.heroLead {
+  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 32px;
+  opacity: 0.95;
+}
+
+.heroButton {
+  display: inline-block;
+  padding: 12px 36px;
+  border-radius: 999px;
+  background-color: #fff;
+  color: var(--color-navy);
+  font-weight: 700;
 }
 
 .about {
   position: relative;
-  padding: 80px 32px;
+  padding: 96px 32px;
   text-align: center;
   background-color: var(--color-bg);
 }
@@ -38,6 +90,135 @@
   margin-bottom: 16px;
 }
 
+/* 数字で見るジエンジサービス */
+.stats {
+  padding: 96px 32px;
+  text-align: center;
+  background-color: var(--color-navy);
+  color: #fff;
+}
+
+.stats h2 {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.statsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.statItem {
+  min-width: 140px;
+}
+
+.statValue {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-teal-light);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.statUnit {
+  font-size: 1.25rem;
+  margin-left: 4px;
+}
+
+.statLabel {
+  opacity: 0.85;
+}
+
+.statsNote {
+  margin-top: 32px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* 代表メッセージ */
+.message {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 96px 32px;
+}
+
+.messageText {
+  text-align: left;
+}
+
+.messageText p {
+  line-height: 1.8;
+}
+
+.messageText h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.messageName {
+  margin-top: 24px;
+  font-weight: 700;
+}
+
+/* 事業内容 */
+.business {
+  padding: 96px 32px;
+  text-align: center;
+  background-color: #f5f7f8;
+}
+
+.business h2 {
+  font-size: 1.75rem;
+  margin-bottom: 40px;
+  color: var(--color-navy);
+}
+
+.businessGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+
+.businessCard {
+  flex: 1 1 260px;
+  max-width: 300px;
+  padding: 32px 24px;
+  border-radius: 8px;
+  background-color: #fff;
+  text-align: left;
+}
+
+.businessCard h3 {
+  color: var(--color-navy);
+  margin-bottom: 16px;
+}
+
+.businessCard ul {
+  list-style: none;
+  line-height: 1.9;
+}
+
+.moreButtonOutline {
+  display: inline-block;
+  padding: 8px 24px;
+  border-radius: 999px;
+  border: 1px solid var(--color-teal);
+  color: var(--color-teal);
+  font-weight: 700;
+}
+
+/* News */
 .news {
   padding: 80px 32px;
   text-align: center;
@@ -86,73 +267,57 @@
   font-weight: 700;
 }
 
-.service {
-  padding: 80px 32px;
+/* お問い合わせ導線 */
+.contact {
+  padding: 96px 32px;
   text-align: center;
   background-color: var(--color-bg);
 }
 
-.service h2 {
+.contact h2 {
   font-size: 1.75rem;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
   color: var(--color-navy);
 }
 
-.serviceCards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto;
+.contact p {
+  max-width: 480px;
+  margin: 0 auto 32px;
+  line-height: 1.8;
 }
 
-.serviceCard {
-  flex: 1 1 260px;
-  max-width: 300px;
-  padding: 32px 24px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--color-navy), var(--color-teal));
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-
-.moreButtonOutline {
-  padding: 8px 24px;
-  border-radius: 999px;
-  border: 1px solid #fff;
-  font-weight: 700;
-}
-
+/* 採用ページ導線 */
 .recruit {
-  padding: 80px 32px;
+  padding: 96px 32px;
   text-align: center;
-  background-color: var(--color-bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-
-.recruitBadge {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: var(--color-teal);
   color: #fff;
-  font-weight: 700;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  line-height: 1.4;
+  background-color: var(--color-navy);
 }
 
-.recruit a {
-  color: var(--color-teal);
-  font-weight: 700;
-  text-decoration: underline;
+.recruit h2 {
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+}
+
+.recruit p {
+  max-width: 480px;
+  margin: 0 auto 32px;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+@media (max-width: 720px) {
+  .message {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .messageText {
+    text-align: center;
+  }
+
+  .messageImage {
+    max-width: 280px;
+    margin: 0 auto;
+  }
 }

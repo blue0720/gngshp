@@ -1,3 +1,43 @@
 .section {
-  padding: 48px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 96px 32px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 300px;
+  max-width: 340px;
+  padding: 32px 24px;
+  border-radius: 8px;
+  background-color: #f5f7f8;
+  color: var(--color-text);
+}
+
+.cardLabel {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 12px;
+}
+
+.cardDescription {
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.cardMore {
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--color-teal);
+  color: var(--color-teal);
+  font-weight: 700;
+  font-size: 0.85rem;
 }

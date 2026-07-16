@@ -1,0 +1,12 @@
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #e8ecee;
+  border: 1px dashed #aab3b8;
+  color: #7a848a;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
