@@ -1,18 +1,17 @@
 // ------------------------------------------------------------------
 // layout.js とは:
 // App Router（appディレクトリ方式）では、"layout.js" という名前のファイルは
-// 「そのフォルダ配下の全ページに共通する外枠（HTMLの<html><body>や
-// ヘッダー・フッターなど）」を定義する特別なファイルです。
+// 「そのフォルダ配下の全ページに共通する外枠」を定義する特別なファイルです。
 //
-// このファイルはapp直下にあるので、サイト全体（Home/Service/Company/
-// News/Recruit/Contact すべて）に適用されます。
+// このファイルはapp直下にあるので、サイト全体（会社サイト・採用サイトの
+// 両方）に適用されます。ただしヘッダー・フッターは会社サイトと採用サイトで
+// デザインが異なるため、ここでは持たせず、それぞれの配下
+// （app/(corporate)/layout.js と app/recruit/layout.js）で個別に用意しています。
+// このファイルは <html><body> の土台とフォント・共通CSSの読み込みだけを担当します。
 //
-// {children} の部分に、実際に開いたページ（例: app/service/page.js の中身）が
-// 差し込まれます。
+// {children} の部分に、実際に開いたページの中身が差し込まれます。
 // ------------------------------------------------------------------
 import { Noto_Sans_JP } from "next/font/google";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import "./globals.css";
 
 // next/font: Next.js標準のフォント読み込み機能。現行サイトと同じ
@@ -33,11 +32,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ja" className={notoSansJP.variable}>
-      <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

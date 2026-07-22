@@ -1,0 +1,22 @@
+/*
+  採用サイト全体で使う色・フォントの変数（CSSカスタムプロパティ）。
+  app/globals.css の --color-* は会社サイト用なので、採用サイトでは
+  混ざらないように --recruit-* という別名で用意している。
+  ここで定義した変数は、.recruitRoot の内側（ヘッダー・本文・フッター）
+  であればどこからでも var(--recruit-color-text) のように参照できる。
+*/
+.recruitRoot {
+  --recruit-color-bg: #ffffff;
+  --recruit-color-text: #353a40;
+  --recruit-color-muted: #a6adbb;
+  --recruit-color-muted-strong: #55617a;
+  --recruit-color-accent: #d8232a;
+  --recruit-color-border: #eceff3;
+
+  /* --recruit-font-sans / --recruit-font-mono は
+     layout.js の next/font/google が生成する変数。 */
+  font-family: var(--recruit-font-sans), "Yu Gothic Medium", "游ゴシック Medium",
+    YuGothic, sans-serif;
+  color: var(--recruit-color-text);
+  background: var(--recruit-color-bg);
+}

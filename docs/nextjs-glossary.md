@@ -62,6 +62,27 @@ App Routerのページ（page.js）は初期状態で「サーバー側で実行
 直接書けるのが特徴（普段のJSで `fetch` してから画面を書き換える処理を、
 もっとシンプルに書けるイメージ）。
 
+## ルートグループ（フォルダ名を丸カッコで囲む）
+
+`app/(corporate)/` のように、フォルダ名を `(　)` で囲むと、
+そのフォルダ名自体はURLに含まれなくなる。
+
+```text
+app/(corporate)/company/page.js  →  https://example.com/company
+（/corporate/company にはならない）
+```
+
+このプロジェクトでは、会社サイトのページ（Home/Service/Company/News/
+Contact）を `app/(corporate)/` にまとめ、採用サイトのページ
+（`app/recruit/`以下）と分けている。理由は、会社サイトと採用サイトで
+ヘッダー・フッターのデザインがまったく違うため。
+`app/(corporate)/layout.js` と `app/recruit/layout.js` それぞれに
+専用のヘッダー・フッターを持たせることで、
+「会社サイトのページには会社サイト用の外枠だけ」
+「採用サイトのページには採用サイト用の外枠だけ」が適用されるようにしている
+（app直下の `app/layout.js` は `<html><body>` の土台だけを担当し、
+ヘッダー・フッターは持たない）。
+
 ## 動的ルート（`[slug]`）
 
 フォルダ名を角カッコで囲む（例: `app/news/[slug]/page.js`）と、
